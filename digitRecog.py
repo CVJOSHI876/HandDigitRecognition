@@ -2,7 +2,6 @@
 """
 Spyder Editor
 
-This is a temporary script file.
 """
 # import Keras packages and libraries
 from keras.models import Sequential
@@ -30,13 +29,13 @@ target = to_categorical(train_data.label)
 classifier = Sequential()
 
 # step1 - build Convolution Layer
-classifier.add(Conv2D(32,(3,3), input_shape=(28,28,1), activation='relu'))
+classifier.add(Conv2D(32,(5,5), input_shape=(28,28,1), activation='relu'))
 
 # step2- Add Pooling layer
 classifier.add(MaxPooling2D(pool_size=(2,2)))
 
-
-classifier.add(Conv2D(32,(3,3), activation='relu'))
+# add second Convolution Layer
+classifier.add(Conv2D(32,(5,5), activation='relu'))
 
 classifier.add(MaxPooling2D(pool_size=(2,2)))
 
